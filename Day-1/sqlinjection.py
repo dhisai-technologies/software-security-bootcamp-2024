@@ -1,7 +1,7 @@
 import sqlite3
 
 
-USER_DATA = [
+SQL_data = [
     (1, 'admin', 'password123'),(2, 'user1', 'password456'),(3, 'user2', 'password789')
 ]
 
@@ -10,7 +10,7 @@ def setup_database():
     conn = sqlite3.connect(":memory:") 
     cursor = conn.cursor()
     cursor.execute("CREATE TABLE users (id INTEGER, username TEXT, password TEXT)")
-    cursor.executemany("INSERT INTO users (id, username, password) VALUES (?, ?, ?)", USER_DATA)
+    cursor.executemany("INSERT INTO users (id, username, password) VALUES (?, ?, ?)", SQL_data)
     conn.commit()
     return conn
 
