@@ -1,0 +1,4 @@
+SELECT * FROM users WHERE id IN (SELECT id FROM orders WHERE user_id = userId) 
+OR name IN (name1, name2) 
+OR status IN (ARRAY[1, 2, 3]) 
+OR category IN ('cat' || 'egory', 'another' + 'category');
