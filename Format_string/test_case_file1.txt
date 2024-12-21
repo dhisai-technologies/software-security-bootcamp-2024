@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    printf("%s\n", input);  
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    fgets(input, sizeof(input), stdin);
+    printf(input);  
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    printf("User input: %s\n", input);  
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    fprintf(stderr, input);  
+    return 0;
+}
+
+#include <stdio.h>
+
+int sanitize_input(char *input) {
+    for (int i = 0; i < 100; i++) {
+        if (input[i] == '\n') {
+            input[i] = '\0';
+        }
+    }
+    return 0;
+}
+
+int main() {
+    char input[100];
+    fgets(input, sizeof(input), stdin);
+    sanitize_input(input);
+    printf(input);  
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    printf("%x\n", input);  // Vulnerability: Format string vulnerability with %x
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    printf("%p\n", input);  // Vulnerability: Format string vulnerability with %p
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    scanf("%s", input);
+    printf("%n\n", input);  // Vulnerability: Format string vulnerability with %n
+    return 0;
+}
