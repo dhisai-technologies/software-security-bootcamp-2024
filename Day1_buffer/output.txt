@@ -1,0 +1,4 @@
+Stack-based vulnerability detected: ['char buffer[64];\n    strcpy(']
+Heap-based vulnerability detected: ['char* buf = (char*)malloc(']
+Heap-based vulnerability detected: ['gets(']
+Heap-based vulnerability detected: ['strcpy(']
