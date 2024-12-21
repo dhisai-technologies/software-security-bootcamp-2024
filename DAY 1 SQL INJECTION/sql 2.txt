@@ -1,0 +1,10 @@
+user_input = "admin' OR '1'='1"  # Malicious input that could cause an SQL injection
+
+# Vulnerable SQL query using f-string formatting
+query_fstring = f"SELECT * FROM users WHERE username = '{user_input}' AND password = 'password'"
+
+# Vulnerable SQL query using %-formatting
+query_percent = "SELECT * FROM users WHERE username = '%s' AND password = '%s'" % (user_input, "password")
+
+# Safe SQL query using parameterized query (No vulnerability)
+query_safe = "SELECT * FROM users WHERE username = ? AND password = ?"
