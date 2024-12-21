@@ -1,0 +1,59 @@
+#include <iostream>
+#include <limits>
+
+void vulnerableIntegerOverflow() {
+    unsigned int a = 4294967295;
+    unsigned int b = 1;
+    unsigned int c = a + b; 
+    std::cout << "Result of overflow: " << c << std::endl;
+}
+
+void vulnerableIntegerUnderflow() {
+    unsigned int a = 0;
+    unsigned int b = 1;
+    unsigned int c = a - b;
+    std::cout << "Result of underflow: " << c << std::endl;
+}
+
+void vulnerableTypeConversion() {
+    double a = 3.14;
+    int b = static_cast<int>(a); 
+    std::cout << "Converted value (truncated): " << b << std::endl;
+}
+
+void vulnerableImplicitConversion() {
+    int a = 10;
+    double b = 5.5;
+    int c = a + b;
+    std::cout << "Result of implicit conversion: " << c << std::endl;
+}
+
+void safeCodeExample() {
+    int x = 10;
+    int y = 20;
+    int z = x + y; // Safe addition
+    std::cout << "Safe addition result: " << z << std::endl;
+
+    double safeDouble = 5.75;
+    int safeInt = static_cast<int>(safeDouble); 
+    std::cout << "Safe conversion result: " << safeInt << std::endl;
+
+
+    int maxInt = std::numeric_limits<int>::max();
+    if (maxInt - x > y) {
+        int safeSum = x + y; // Safe addition
+        std::cout << "Safe sum result: " << safeSum << std::endl;
+    } else {
+        std::cout << "Addition would overflow!" << std::endl;
+    }
+}
+
+int main() {
+    vulnerableIntegerOverflow();
+    vulnerableIntegerUnderflow();
+    vulnerableTypeConversion();
+    vulnerableImplicitConversion();
+    safeCodeExample();
+
+    return 0;
+}
