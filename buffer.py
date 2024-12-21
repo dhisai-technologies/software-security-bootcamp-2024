@@ -49,3 +49,4 @@ void unsafeFunction(const char* input) {
             print(f"[{vuln_type}] on line {line_number}: {code}")
     else:
         print("No vulnerabilities detected.")
+        # huubhbhjbuhn
