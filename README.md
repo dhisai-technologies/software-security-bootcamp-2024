@@ -1,4 +1,5 @@
 # Software Security Bootcamp 2024
+<<<<<<< HEAD
 
 SQL Injection Vulnerability Detection Tool
 
@@ -119,3 +120,6 @@ If you'd like to contribute:
 ---
 
 
+=======
+hola
+>>>>>>> 6a8843094bdbda339912bb6b05208cd353f4d584
