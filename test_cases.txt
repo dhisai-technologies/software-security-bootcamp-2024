@@ -1,0 +1,20 @@
+printf("Value: %x", 12345);
+printf("Pointer: %p", &main);
+printf("Memory overwrite: %n", &i);
+printf("Hello, world!");
+printf("%d %d", 10, 20);
+printf("%s", "Safe string");
+printf("Padded hex: %08x", 255);
+printf("%.20s", "This is a long string.");
+printf("%f", 3.14159);
+printf("%%");  // Escaped percentage sign
+printf("%x %x %x", 1, 2, 3);
+printf("%s%s%s%s", "A", "B", "C", "D");
+printf("%1000x");
+printf("Overread: %x%x%x%x%x", 1, 2, 3, 4, 5);
+printf("%c", 'A');
+printf("Complex: %d %s %p %n", 123, "text", &main, &i);
+printf("%-10s", "left");
+printf("Right padding: %10s", "right");
+printf("Extra arguments: %x", 12345, 67890);
+printf("%s", user_input);

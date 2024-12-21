@@ -61,6 +61,7 @@ parser = SQLQueryParser(query)
 print("WHERE Conditions:", parser.get_where_conditions())
 print("JOIN Conditions:", parser.get_joins())
 print("Subqueries:", parser.get_subqueries())
+<<<<<<< HEAD
 
 import unittest
 import SQLQueryParser
@@ -104,3 +105,5 @@ class TestSQLQueryParser(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
+=======
+>>>>>>> 5da50bf5dbb5d3e3126a215a62168670d755a347
