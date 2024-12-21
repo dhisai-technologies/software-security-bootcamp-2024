@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string userInput;
+    char buffer[50];
+    
+    // Unsafe direct input usage
+    cout << "Enter some text: ";
+    cin >> userInput;
+    cout << userInput << endl;  // Direct output without sanitization
+    
+    // Unsafe sprintf usage
+    sprintf(buffer, "User entered: %s", userInput.c_str());
+    
+    // Unsafe string concatenation
+    string message = "User message: " + userInput;
+    
+    // Unsafe system call
+    system(userInput.c_str());
+    
+    return 0;
+}
