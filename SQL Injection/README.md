@@ -15,7 +15,7 @@ This project is ideal for:
 - **Verbose Output**: Displays executed queries, payload results, and retrieved data.
 
 ## File Structure
-```
+
 project-directory/
 |-- sql_injection_tester.py   # Main Python script
 |-- payloads.txt              # File containing SQL injection payloads
