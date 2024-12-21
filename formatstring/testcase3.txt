@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+void vulnerable_function(char *user_input) {
+    printf(user_input); 
+    printf("Hello, %s\n", user_input); 
+    printf("Value: %d\n", 42); 
+}
+
+int main() {
+    char *input = "User  input";
+    vulnerable_function(input);
+    return 0;
+}

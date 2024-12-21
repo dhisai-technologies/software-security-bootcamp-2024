@@ -6,7 +6,7 @@ def detect_vulnerabilities(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
 
-    # Patterns to detect strcpy and strncpy
+  
     strcpy_pattern = r'\bstrcpy\s*\(\s*([^\)]+)\)'
     strncpy_pattern = r'\bstrncpy\s*\(\s*([^,]+),\s*([^,]+),\s*([^,]+)\)'
     comment_pattern = r'^\s*//'  
@@ -18,11 +18,10 @@ def detect_vulnerabilities(file_path):
         if re.search(strcpy_pattern, line):
             vulnerabilities.append((line_number, 'strcpy', line.strip()))
 
-        # Check for strncpy vulnerabilities
         strncpy_match = re.search(strncpy_pattern, line)
         if strncpy_match:
             dest, src, size = strncpy_match.groups()
-            # Detect unsafe strncpy usage
+            
             if not re.search(r'\bsizeof\s*\(\s*{}\s*\)'.format(re.escape(dest.strip())), size.strip()):
                 vulnerabilities.append((line_number, 'strncpy', line.strip()))
 
@@ -45,7 +44,7 @@ void unsafeFunction(const char* input) {
     with open(cpp_file, 'w') as file:
         file.write(cpp_code)
 
-    # Detect vulnerabilities
+    
     results = detect_vulnerabilities(cpp_file)
 
     if results:
