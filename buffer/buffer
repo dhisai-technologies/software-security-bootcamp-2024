@@ -1,0 +1,32 @@
+import re
+
+def detect_unsafe_usage(code):
+    unsafe_functions = ['strcpy', 'strcat', 'gets', 'sprintf']
+    warnings = []
+
+
+    for function in unsafe_functions:
+        if re.search(r'\b' + function + r'\s*\(.*\)\s*;', code):
+            warnings.append(f"Unsafe function call detected: {function}()")
+
+    return warnings
+
+code = """
+    char buffer[100];
+    strcpy(buffer, "internship");
+    strcat(buffer, " bootcamp");
+    strrev(buffer,"good");
+    strcpy(buffer,"5 days handson bootcamp");
+    gets(buffer);
+    sprintf(buffer, "programming");
+"""
+
+
+warnings = detect_unsafe_usage(code)
+
+
+for warning in warnings:
+    print(warning)
+    
+    
+
