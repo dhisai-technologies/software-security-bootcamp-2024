@@ -1,0 +1,19 @@
+int main() {
+    int x = 10;
+    float y = 20.5;
+    double z = 30.75;
+
+    // Implicit type casting from int to float
+    float result1 = x + y;
+
+    // Implicit type casting from float to double
+    double result2 = y + z;
+
+    // Implicit type casting from int to double
+    double result3 = x + z;
+
+    // Implicit type casting from float to int
+    int result4 = y;
+
+    return 0;
+}
