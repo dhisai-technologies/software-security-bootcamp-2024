@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main() {
+    char buffer[10];  // A buffer of 10 characters
+
+    // Safe access within bounds
+    buffer[0] = 'E';
+    buffer[9] = 'F';
+
+    std::cout << "This code is safe!" << std::endl;
+
+    return 0;
+}

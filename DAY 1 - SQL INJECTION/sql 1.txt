@@ -1,0 +1,4 @@
+username = 'admin'
+query = f"SELECT * FROM users WHERE username = '{username}'"
+query = "SELECT * FROM users WHERE username = %s" % username
+query_safe = "SELECT * FROM users WHERE username = ?"

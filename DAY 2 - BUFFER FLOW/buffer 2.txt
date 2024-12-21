@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main() {
+    char buffer[10];  // A buffer of 10 characters
+
+    // Accessing memory before the start of the buffer
+    buffer[-1] = 'B';  // Negative index (underflow)
+    std::cout << "Buffer underflow detected!" << std::endl;
+
+    return 0;
+}

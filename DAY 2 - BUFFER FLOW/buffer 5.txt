@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+    char buffer[10];
+    buffer[5] = 'C';   // Valid access
+    buffer[15] = 'D';  // Overflow
+    buffer[-3] = 'E';  // Underflow
+    return 0;
+}
+
