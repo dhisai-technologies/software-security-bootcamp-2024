@@ -1,0 +1,13 @@
+PS C:\Users\manik\OneDrive\Desktop\Day-2\software-security-bootcamp-2024\FormatString> python report.py
+=== Vulnerability Report ===
+File: test.c
+Line: 9
+Function: printf
+Code Snippet: printf(user_input)
+----------------------------------------
+File: test.cpp
+Line: 8
+Function: fprintf
+Code Snippet: fprintf(stdout, buffer)
+----------------------------------------
+Report generated: vulnerability_report.json
