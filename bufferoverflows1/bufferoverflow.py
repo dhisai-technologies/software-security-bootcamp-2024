@@ -1,7 +1,8 @@
-import os
 import re
+import os
 
 def detect_buffer_overflow_vulnerabilities(c_code):
+    # Your existing vulnerability detection logic
     vulnerabilities = []
 
     # Split the code into lines to track line numbers
@@ -46,11 +47,10 @@ def analyze_test_case(file_path):
     else:
         print(f"File: {file_path} - No vulnerabilities detected.")
 
-# Main function to loop through test cases in the current directory
+# Main function to analyze the specific test case file 'testcasebuffer.c'
 def main():
-    for filename in os.listdir('.'):
-        if filename.endswith('.c'):  # Only process C files
-            analyze_test_case(filename)
+    file_path = 'bufferoverflows1/testcasebuffer.c'  # Specify the file path directly
+    analyze_test_case(file_path)  # Analyze the specific file
 
 if __name__ == "__main__":
     main()
