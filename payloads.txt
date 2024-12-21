@@ -1,6 +1,0 @@
-longusername1 supersecretpassword123
-' OR 1 -- - ' OR 1 -- -
-' or " ' or "
--- or # -- or #
-' OR '1 ' OR '1
-' OR '' = ' ' OR '' = '
