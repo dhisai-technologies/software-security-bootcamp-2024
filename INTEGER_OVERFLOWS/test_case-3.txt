@@ -1,0 +1,37 @@
+#include <iostream>
+
+int main() {
+    int a = 2147483647;
+    int b = 1;
+    int result = a + b;
+    std::cout << "Test Case 1 - Integer Overflow in Addition: " << result << std::endl;
+
+    int x = 1000000;
+    int y = 1000000;
+    int product = x * y;
+    std::cout << "Test Case 2 - Integer Overflow in Multiplication: " << product << std::endl;
+
+    int* p = nullptr;
+    *p = 42;
+    std::cout << "Test Case 3 - Unsafe Pointer Dereference: " << *p << std::endl;
+
+    int arr[10];
+    int* ptr = arr;
+    ptr += 20;
+    *ptr = 5;
+    std::cout << "Test Case 4 - Pointer Arithmetic Out of Bounds: " << *ptr << std::endl;
+
+    int size = 1000000000;
+    int* large_arr = new int[size];
+    std::cout << "Test Case 5 - Unsafe Array Size Allocation: Array of size " << size << std::endl;
+
+    int shift_val = 1;
+    shift_val = shift_val << 32;
+    std::cout << "Test Case 6 - Bitwise Shift Overflow: " << shift_val << std::endl;
+
+    int arr2[10];
+    arr2[20] = 5;
+    std::cout << "Test Case 7 - Array Index Out of Bounds: " << arr2[20] << std::endl;
+
+    return 0;
+}
