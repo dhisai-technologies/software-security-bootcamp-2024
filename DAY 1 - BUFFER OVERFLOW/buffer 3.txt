@@ -1,7 +1,0 @@
-#include <iostream>
-
-int main() {
-    char buffer[10];
-    buffer[-1] = 'B';  // Underflow
-    return 0;
-}
